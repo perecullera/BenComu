@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BenComu</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_fb">FbActivity</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">718141334984518</string>
+
+</resources>
