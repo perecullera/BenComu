@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.NetworkImageView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,7 +23,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import pcedev.bencomu.raw.utils.CustomJsonRequest;
-import pcedev.bencomu.raw.utils.FeedImageView;
 import pcedev.bencomu.raw.utils.Singleton;
 
 /**
@@ -158,11 +158,12 @@ public class FbFragment extends Fragment {
                 id.setText(fbarray.get(position).id);
                 message.setText(fbarray.get(position).message);
 
-                FeedImageView nv = (FeedImageView) holder.itemView.findViewById(R.id.feedImage1);
+                NetworkImageView nv = (NetworkImageView) holder.itemView.findViewById(R.id.feedImage1);
                 nv.setTag(fbarray.get(position).picture);
                 //nv.setDefaultImageResId((ImageView) holder.itemView.findViewById(R.id.list_avatar)); // image for loading...
                 if (fbarray.get(position).picture!=null){
-                    nv.setImageUrl(String.valueOf(Uri.parse(fbarray.get(position).picture)), helper.getImageLoader());                }
+                    nv.setImageUrl(String.valueOf(Uri.parse(fbarray.get(position).picture)), helper.getImageLoader());
+                }
                 //ImgController from your code
                 //image.setImageURI(Uri.parse(fbarray.get(position).picture));
             }else {
