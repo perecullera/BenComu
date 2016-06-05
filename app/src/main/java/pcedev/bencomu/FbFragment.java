@@ -1,5 +1,6 @@
 package pcedev.bencomu;
 
+import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -52,7 +53,15 @@ public class FbFragment extends Fragment {
 
         adapter = new ContentAdapter(fbposts);
 
+        ProgressDialog PDialog = new ProgressDialog(getActivity());
+        // Showing progress dialog before making http request
+        PDialog.setMessage("..wait..");
+        PDialog.show();
+
         loadFBPosts();
+
+        PDialog.hide();
+
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -61,6 +70,7 @@ public class FbFragment extends Fragment {
 
     }
     public void loadFBPosts() {
+
         CustomJsonRequest request = new CustomJsonRequest
                 (Request.Method.GET, RECENT_API_ENDPOINT, null, new Response.Listener<JSONObject>() {
 
@@ -106,6 +116,7 @@ public class FbFragment extends Fragment {
 
         request.setPriority(Request.Priority.HIGH);
         helper.add(request);
+
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
@@ -152,16 +163,19 @@ public class FbFragment extends Fragment {
         public void onBindViewHolder(ViewHolder holder, int position) {
             // no-op
             if (fbarray.size()>0 ){
-                TextView id = (TextView) holder.itemView.findViewById(R.id.list_title);
-                TextView message = (TextView) holder.itemView.findViewById(R.id.list_desc);
-                ImageView image = (ImageView) holder.itemView.findViewById(R.id.list_avatar);
+                TextView id = (TextView) holder.itemView.findViewById(R.id.txtUrl);
+                TextView message = (TextView) holder.itemView.findViewById(R.id.txtStatusMsg);
+                ImageView image = (ImageView) holder.itemView.findViewById(R.id.feedImage1);
                 id.setText(fbarray.get(position).id);
                 message.setText(fbarray.get(position).message);
 
-                NetworkImageView nv = (NetworkImageView) holder.itemView.findViewById(R.id.list_avatar);
+                NetworkImageView nv = (NetworkImageView) holder.itemView.findViewById(R.id.feedImage1);
                 nv.setTag(fbarray.get(position).picture);
                 //nv.setDefaultImageResId((ImageView) holder.itemView.findViewById(R.id.list_avatar)); // image for loading...
-                nv.setImageUrl(String.valueOf(Uri.parse(fbarray.get(position).picture)), helper.getImageLoader()); //ImgController from your code
+                if (fbarray.get(position).picture!=null){
+                    nv.setImageUrl(String.valueOf(Uri.parse(fbarray.get(position).picture)), helper.getImageLoader());
+                }
+                //ImgController from your code
                 //image.setImageURI(Uri.parse(fbarray.get(position).picture));
             }else {
 

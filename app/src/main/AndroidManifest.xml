@@ -33,6 +33,11 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="@string/app_name" />
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="dc6c096b4e4de671d5aa25960d7900c641016d05" />
     </application>
 
 </manifest>
