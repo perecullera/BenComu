@@ -1,5 +1,6 @@
 package pcedev.bencomu;
 
+import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -52,7 +53,15 @@ public class FbFragment extends Fragment {
 
         adapter = new ContentAdapter(fbposts);
 
+        ProgressDialog PDialog = new ProgressDialog(getActivity());
+        // Showing progress dialog before making http request
+        PDialog.setMessage("..wait..");
+        PDialog.show();
+
         loadFBPosts();
+
+        PDialog.hide();
+
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -61,6 +70,7 @@ public class FbFragment extends Fragment {
 
     }
     public void loadFBPosts() {
+
         CustomJsonRequest request = new CustomJsonRequest
                 (Request.Method.GET, RECENT_API_ENDPOINT, null, new Response.Listener<JSONObject>() {
 
@@ -106,6 +116,7 @@ public class FbFragment extends Fragment {
 
         request.setPriority(Request.Priority.HIGH);
         helper.add(request);
+
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
