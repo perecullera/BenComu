@@ -97,7 +97,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_rss) {
             // Handle the camera action
-        } else if (id == R.id.nav_fb) {
+        }else if (id == R.id.nav_prog) {
+            fragmentClass = ProgFragment.class;
+        } else if (id == R.id.nav_candid) {
+            fragmentClass = Candidfragment.class;
+        }  else if (id == R.id.nav_fb) {
             fragmentClass = FbFragment.class;
         } else if (id == R.id.nav_tw) {
             fragmentClass = Twfragment.class;

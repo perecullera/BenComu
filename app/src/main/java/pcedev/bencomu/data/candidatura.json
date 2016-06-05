@@ -1,0 +1,25 @@
+[  {"provincies":
+      {"Barcelona":[
+        {"nom": "Xavier Domènech",
+          "descripcio": "lorem ipsum",
+          "foto": "url..."},
+        {"nom": "Marcelo Exposito",
+          "descripcio": "lorem ipsum",
+          "foto": "url..."
+        }
+      ],"Girona": [
+        {"nom": "Xavier Domènech",
+          "descripcio": "lorem ipsum",
+          "foto": "url..."},
+        {"nom": "Marcelo Exposito",
+          "descripcio": "lorem ipsum",
+          "foto": "url..."
+        }
+      ],"Tarragona": [
+
+      ], "Lleida": [
+
+      ]
+      }
+  }
+]

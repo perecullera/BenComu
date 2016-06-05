@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_prog" android:icon="@android:drawable/ic_menu_view"
+            android:title="Programa" />
+        <item android:id="@+id/nav_candid" android:icon="@android:drawable/ic_menu_view"
+            android:title="Candidatura" />
         <item android:id="@+id/nav_rss" android:icon="@android:drawable/ic_menu_camera"
             android:title="RSS" />
         <item android:id="@+id/nav_fb" android:icon="@android:drawable/ic_menu_gallery"
@@ -11,14 +15,5 @@
         <item android:id="@+id/nav_insta" android:icon="@android:drawable/ic_menu_manage"
             android:title="Instagram" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
-                android:title="Share" />
-            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>
