@@ -56,7 +56,7 @@ public class FbFragment extends Fragment {
         ProgressDialog PDialog = new ProgressDialog(getActivity());
         // Showing progress dialog before making http request
         PDialog.setMessage("..wait..");
-        PDialog.show();
+        PDialog.dismiss();
 
         loadFBPosts();
 

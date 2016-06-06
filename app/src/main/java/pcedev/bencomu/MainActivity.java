@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_prog) {
             fragmentClass = ProgFragment.class;
         } else if (id == R.id.nav_candid) {
-            fragmentClass = Candidfragment.class;
+            fragmentClass = CandidFragment.class;
         }  else if (id == R.id.nav_fb) {
             fragmentClass = FbFragment.class;
         } else if (id == R.id.nav_tw) {
