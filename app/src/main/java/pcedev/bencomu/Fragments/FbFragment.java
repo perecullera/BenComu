@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Fragments;
 
 import android.app.ProgressDialog;
 import android.net.Uri;
@@ -23,8 +23,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import pcedev.bencomu.raw.utils.CustomJsonRequest;
-import pcedev.bencomu.raw.utils.Singleton;
+import pcedev.bencomu.Models.FBPost;
+import pcedev.bencomu.R;
+import pcedev.bencomu.VolleyUtils.CustomJsonRequest;
+import pcedev.bencomu.VolleyUtils.Singleton;
 
 /**
  * Created by perecullera on 25/5/16.

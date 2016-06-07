@@ -1,6 +1,8 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Models;
 
 import java.util.ArrayList;
+
+import pcedev.bencomu.Models.Candidat;
 
 /**
  * Created by perecullera on 6/6/16.

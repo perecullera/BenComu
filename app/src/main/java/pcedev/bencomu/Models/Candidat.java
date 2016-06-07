@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Models;
 
 import java.io.Serializable;
 

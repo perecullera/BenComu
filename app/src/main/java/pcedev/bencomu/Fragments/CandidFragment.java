@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Fragments;
 
 
 import android.net.Uri;
@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 
-import pcedev.bencomu.raw.utils.Singleton;
+import pcedev.bencomu.Models.Candidat;
+import pcedev.bencomu.R;
+import pcedev.bencomu.VolleyUtils.Singleton;
 
 /**
  * Created by perecullera on 6/6/16.

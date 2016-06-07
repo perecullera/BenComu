@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Fragments;
 
 import android.content.Context;
 import android.net.Uri;
@@ -24,7 +24,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import pcedev.bencomu.raw.utils.Singleton;
+import pcedev.bencomu.Utils.ExpandableCandAdapter;
+import pcedev.bencomu.Models.Candidat;
+import pcedev.bencomu.Models.Provincia;
+import pcedev.bencomu.R;
+import pcedev.bencomu.VolleyUtils.Singleton;
 
 
 /**

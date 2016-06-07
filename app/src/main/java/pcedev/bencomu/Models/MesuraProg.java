@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Models;
 
 /**
  * Created by perecullera on 6/6/16.

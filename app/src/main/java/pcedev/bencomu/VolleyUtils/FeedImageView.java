@@ -1,4 +1,4 @@
-package pcedev.bencomu.raw.utils;
+package pcedev.bencomu.VolleyUtils;
 
 import android.content.Context;
 import android.text.TextUtils;

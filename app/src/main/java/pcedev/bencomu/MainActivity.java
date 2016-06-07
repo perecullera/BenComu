@@ -25,6 +25,13 @@ import android.view.View;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import pcedev.bencomu.Fragments.CandidListFragment;
+import pcedev.bencomu.Fragments.FbFragment;
+import pcedev.bencomu.Fragments.InstaFragment;
+import pcedev.bencomu.Fragments.ProgFragment;
+import pcedev.bencomu.Fragments.RssFragment;
+import pcedev.bencomu.Fragments.Twfragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

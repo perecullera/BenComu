@@ -1,4 +1,4 @@
-package pcedev.bencomu.raw.utils;
+package pcedev.bencomu.VolleyUtils;
 
 import android.util.Log;
 
@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import pcedev.bencomu.FBPost;
+import pcedev.bencomu.Models.FBPost;
 
 //import Models.FBPost;
 

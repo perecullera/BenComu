@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
+
+import pcedev.bencomu.Utils.ExpandableListAdapter;
+import pcedev.bencomu.Models.MesuraProg;
+import pcedev.bencomu.R;
 
 /**
  * Created by perecullera on 5/6/16.

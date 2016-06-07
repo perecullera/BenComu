@@ -1,4 +1,4 @@
-package pcedev.bencomu;
+package pcedev.bencomu.Fragments;
 
 
 import android.content.Context;
@@ -14,6 +14,7 @@ import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
 import io.fabric.sdk.android.Fabric;
+import pcedev.bencomu.R;
 
 /**
  * Created by perecullera on 2/6/16.
