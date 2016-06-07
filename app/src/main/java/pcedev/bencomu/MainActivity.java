@@ -3,12 +3,14 @@ package pcedev.bencomu;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ecp_logo);
+        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ecp_logo));
 
         //sha
         getSHAFingerPrint();
@@ -44,11 +48,29 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this,
+                drawer,
+                toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+        //After instantiating your ActionBarDrawerToggle
+        toggle.setDrawerIndicatorEnabled(false);
+        Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ecp_logo_p30, this.getTheme());
+        toggle.setHomeAsUpIndicator(drawable);
+        toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawer.isDrawerVisible(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                } else {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            }
+        });
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -96,17 +118,18 @@ public class MainActivity extends AppCompatActivity
         Class fragmentClass = null;
 
         if (id == R.id.nav_rss) {
-            // Handle the camera action
+            // Handle the camera actionfragmentClass = InstaFragment.class;
+            fragmentClass = RssFragment.class;
         }else if (id == R.id.nav_prog) {
             fragmentClass = ProgFragment.class;
         } else if (id == R.id.nav_candid) {
-            fragmentClass = CandidFragment.class;
+            fragmentClass = CandidListFragment.class;
         }  else if (id == R.id.nav_fb) {
             fragmentClass = FbFragment.class;
         } else if (id == R.id.nav_tw) {
             fragmentClass = Twfragment.class;
         } else if (id == R.id.nav_insta) {
-
+            fragmentClass = InstaFragment.class;
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
