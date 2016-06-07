@@ -7,7 +7,7 @@
         <item android:id="@+id/nav_candid" android:icon="@android:drawable/ic_menu_view"
             android:title="Candidatura" />
         <item android:id="@+id/nav_rss" android:icon="@android:drawable/ic_menu_camera"
-            android:title="RSS" />
+            android:title="Sala de Premsa" />
         <item android:id="@+id/nav_fb" android:icon="@android:drawable/ic_menu_gallery"
             android:title="Facebook" />
         <item android:id="@+id/nav_tw" android:icon="@android:drawable/ic_menu_slideshow"

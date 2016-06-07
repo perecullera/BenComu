@@ -11,17 +11,17 @@ public class RssItem {
 
     private String link;
 
-    private String content;
+    //private String content;
 
 
 
     public RssItem() {
     }
-    public RssItem(String title, String descripcion, String link, String content) {
+    public RssItem(String title, String descripcion, String link) {
         this.title = title;
         this.descripcion = descripcion;
         this.link = link;
-        this.content = content;
+        //this.content = content;
     }
 
     public String getTitle() {
@@ -36,7 +36,7 @@ public class RssItem {
         return link;
     }
 
-    public String getContent() {
+    /*public String getContent() {
         return content;
-    }
+    }*/
 }

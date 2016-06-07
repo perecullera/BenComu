@@ -6,9 +6,10 @@ import java.io.Serializable;
  * Created by perecullera on 6/6/16.
  */
 public class Candidat implements Serializable{
-    String nom;
-    String descripcio;
-    String foto;
+    public String nom;
+    public String descripcio;
+    public String foto;
+
 
     public Candidat(String nom, String descripcio,String foto ){
         this.nom=nom;

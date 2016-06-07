@@ -8,8 +8,8 @@ import pcedev.bencomu.Models.Candidat;
  * Created by perecullera on 6/6/16.
  */
 public class Provincia {
-    String nom;
-    ArrayList<Candidat> candidats;
+    public String nom;
+    public ArrayList<Candidat> candidats;
 
     public Provincia(String provincia, ArrayList<Candidat> candidats) {
         this.nom = provincia;
