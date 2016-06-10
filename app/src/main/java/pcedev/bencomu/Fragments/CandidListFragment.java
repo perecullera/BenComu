@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +25,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import pcedev.bencomu.Utils.ExpandableCandAdapter;
 import pcedev.bencomu.Models.Candidat;
 import pcedev.bencomu.Models.Provincia;
 import pcedev.bencomu.R;
+import pcedev.bencomu.Utils.ExpandableCandAdapter;
 import pcedev.bencomu.VolleyUtils.Singleton;
 
 
@@ -194,8 +195,6 @@ public class CandidListFragment extends Fragment {
 
 
     public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
-        // Set numbers of List in RecyclerView.
-        //private static final int LENGTH = 18;
 
         private ArrayList<Candidat> candidatsArray;
 
@@ -220,12 +219,11 @@ public class CandidListFragment extends Fragment {
 
                 NetworkImageView nv = (NetworkImageView) holder.itemView.findViewById(R.id.feedImage1);
                 nv.setTag(candidatsArray.get(position).foto);
-                //nv.setDefaultImageResId((ImageView) holder.itemView.findViewById(R.id.list_avatar)); // image for loading...
                 if (candidatsArray.get(position).foto!=null){
                     nv.setImageUrl(String.valueOf(Uri.parse(candidatsArray.get(position).foto)), helper.getImageLoader());
                 }
-                //ImgController from your code
-                //image.setImageURI(Uri.parse(fbarray.get(position).picture));
+                message.setMovementMethod(new ScrollingMovementMethod());
+
             }else {
 
             }

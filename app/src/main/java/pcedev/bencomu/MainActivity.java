@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ecp_logo);
-        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ecp_logo));
+
 
         //sha
         getSHAFingerPrint();
@@ -154,6 +153,9 @@ public class MainActivity extends AppCompatActivity
         // Highlight the selected item has been done by NavigationView
         item.setChecked(true);
         // Set action bar title
+        /*Spannable text = new SpannableString(actionBar.getTitle());
+        text.setSpan(new ForegroundColorSpan(Color.BLUE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        actionBar.setTitle(text);*/
         setTitle(item.getTitle());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

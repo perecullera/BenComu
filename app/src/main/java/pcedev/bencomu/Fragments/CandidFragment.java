@@ -29,11 +29,6 @@ public class CandidFragment extends Fragment {
         Bundle bundle = getArguments();
         candid= (Candidat) bundle.getSerializable("value");
         Log.e("division TEST", "" + candid.get_nom());
-/*
-        TextView tv = (TextView) getView().findViewById(R.id.candid_name);
-        String nom = candid.get_nom();
-        tv.setText(nom);*/
-
         return inflater.inflate(R.layout.candid_item, container, false);
     }
     @Override
@@ -42,12 +37,13 @@ public class CandidFragment extends Fragment {
         TextView tv = (TextView) getView().findViewById(R.id.candid_name);
         String nom = candid.get_nom();
         tv.setText(nom);
-       NetworkImageView nv = (NetworkImageView) getView().findViewById(R.id.candid_img);
+        NetworkImageView nv = (NetworkImageView) getView().findViewById(R.id.candid_img);
         //nv.setDefaultImageResId((ImageView) holder.itemView.findViewById(R.id.list_avatar)); // image for loading...
         nv.setImageUrl(String.valueOf(Uri.parse(candid.foto)), helper.getImageLoader());
 
         TextView tvDesc = (TextView)getView().findViewById(R.id.candid_desc);
         tvDesc.setText(candid.descripcio);
+
 
     }
 }

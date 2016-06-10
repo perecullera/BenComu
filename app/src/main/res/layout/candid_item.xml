@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:scrollbars = "vertical">
 
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/candid_img"
@@ -9,20 +13,24 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:scaleType="centerInside"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:scrollbars = "vertical"/>
 
     <TextView
         android:id="@+id/candid_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#d10c0c"/>
+        android:textColor="#d10c0c"
+        android:scrollbars = "vertical"/>
 
     <TextView
         android:id="@+id/candid_desc"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:textColor="#1b0606" />
+        android:textColor="#1b0606"
+        android:scrollbars = "vertical"/>
 
 
 </LinearLayout>
+    </ScrollView>

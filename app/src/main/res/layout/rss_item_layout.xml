@@ -20,7 +20,8 @@
                 android:text="Título"
                 android:id="@+id/titulo"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="16dp" />
+                android:layout_marginLeft="16dp"
+                android:textColor="@color/colorPrimaryDark"/>
             <!-- LINEA DIVISORIA -->
 
             <!-- DESCRIPCION -->
