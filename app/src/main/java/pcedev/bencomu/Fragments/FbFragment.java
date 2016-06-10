@@ -37,7 +37,7 @@ public class FbFragment extends Fragment {
     private static final String TOKEN =
             "718141334984518%7C2de9dd91f69660269bf70f0ac39208e0";
     private static final String FBGraphUrl = "https://graph.facebook.com";
-    private static final String UrlParameters = "/247118052078814/posts?fields=message,picture&limit=10&access_token=";
+    private static final String UrlParameters = "/463627663844039/posts?fields=message,picture,full_picture,link,likes&limit=20&access_token=";
     private static final String RECENT_API_ENDPOINT = FBGraphUrl + UrlParameters +TOKEN;
 
     static Singleton helper = Singleton.getInstance();
@@ -91,12 +91,12 @@ public class FbFragment extends Fragment {
                             for (int i = 0; i < responseArray.length(); i++) {
                                 FBPost fbpost = new FBPost();
                                 JSONObject o = responseArray.getJSONObject(i);
-                                fbpost.id = o.getString("id");
+                                fbpost.id = o.getString("link");
                                 if(o.has("message")){
                                     fbpost.message = o.getString("message");
                                 }
-                                if (o.has("picture")){
-                                    fbpost.picture = o.getString("picture");
+                                if (o.has("full_picture")){
+                                    fbpost.picture = o.getString("full_picture");
                                 }
                                 fbposts.add(fbpost);
 
