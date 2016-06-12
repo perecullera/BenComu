@@ -5,7 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
+
+    android:scrollbars="vertical">
+</android.support.v7.widget.RecyclerView>
+
+
+<!--
+    <ProgressBar
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/progressBar"
+style="@android:style/Widget.ProgressBar.Snipper"
+android:layout_marginRight="5dp" />
     android:paddingBottom="@dimen/md_keylines"
     android:paddingTop="@dimen/md_keylines"
-    android:scrollbars="vertical"
-   />
+-->
+
+

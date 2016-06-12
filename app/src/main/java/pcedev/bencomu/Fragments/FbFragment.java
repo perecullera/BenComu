@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -44,6 +45,7 @@ public class FbFragment extends Fragment {
     final ArrayList<FBPost> FBArray = new ArrayList<>();
     ContentAdapter adapter;
     ArrayList<FBPost> fbposts = new ArrayList<>();
+    ProgressBar prg;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,17 +54,15 @@ public class FbFragment extends Fragment {
                 R.layout.recycler_view, container, false);
         //Requests req = new Requests();
 
+        //prg = (ProgressBar)recyclerView.findViewById(R.id.progressBar);
 
         adapter = new ContentAdapter(fbposts);
 
-        ProgressDialog PDialog = new ProgressDialog(getActivity());
-        // Showing progress dialog before making http request
-        PDialog.setMessage("..wait..");
-        PDialog.dismiss();
+
 
         loadFBPosts();
 
-        PDialog.hide();
+
 
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
@@ -72,6 +72,12 @@ public class FbFragment extends Fragment {
 
     }
     public void loadFBPosts() {
+        final ProgressDialog PDialog = new ProgressDialog(getActivity());
+        // Showing progress dialog before making http request
+        PDialog.setMessage("..carregant posts..");
+        //PDialog.dismiss();
+        PDialog.show();
+
 
         CustomJsonRequest request = new CustomJsonRequest
                 (Request.Method.GET, RECENT_API_ENDPOINT, null, new Response.Listener<JSONObject>() {
@@ -85,6 +91,7 @@ public class FbFragment extends Fragment {
                             System.out.println(response);
                             String message, picture, id;
 
+                            //prg.setVisibility(View.GONE);
 
                             JSONArray responseArray = response.getJSONArray("data");
 
@@ -106,6 +113,7 @@ public class FbFragment extends Fragment {
                             Log.d("", e.toString());
                         }
                         adapter.notifyDataSetChanged();
+                        PDialog.hide();
                     }
 
                 }, new Response.ErrorListener() {
@@ -118,6 +126,7 @@ public class FbFragment extends Fragment {
 
         request.setPriority(Request.Priority.HIGH);
         helper.add(request);
+
 
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
